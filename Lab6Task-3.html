@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Canvas Shapes</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Click Shapes to Change Their Color</h2>
+<canvas id="myCanvas" width="400" height="300"></canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+// Define shapes as objects with position, size, color
+let shapes = [
+    { type: "rect", x: 50, y: 50, width: 100, height: 80, color: "lightblue" },
+    { type: "circle", x: 250, y: 90, radius: 40, color: "lightgreen" },
+    { type: "line", x1: 50, y1: 200, x2: 350, y2: 250, color: "red" }
+];
+
+// Function to draw all shapes
+function drawShapes() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
+    shapes.forEach(shape => {
+        if(shape.type === "rect") {
+            ctx.fillStyle = shape.color;
+            ctx.fillRect(shape.x, shape.y, shape.width, shape.height);
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(shape.x, shape.y, shape.width, shape.height);
+        } else if(shape.type === "circle") {
+            ctx.beginPath();
+            ctx.arc(shape.x, shape.y, shape.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = shape.color;
+            ctx.fill();
+            ctx.strokeStyle = "black";
+            ctx.stroke();
+        } else if(shape.type === "line") {
+            ctx.beginPath();
+            ctx.moveTo(shape.x1, shape.y1);
+            ctx.lineTo(shape.x2, shape.y2);
+            ctx.strokeStyle = shape.color;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        }
+    });
+}
+
+// Function to detect click on rectangle
+function isRectClicked(shape, mx, my) {
+    return mx >= shape.x && mx <= shape.x + shape.width && my >= shape.y && my <= shape.y + shape.height;
+}
+
+// Function to detect click on circle
+function isCircleClicked(shape, mx, my) {
+    const dx = mx - shape.x;
+    const dy = my - shape.y;
+    return dx*dx + dy*dy <= shape.radius * shape.radius;
+}
+
+// Event listener for mouse click
+canvas.addEventListener("click", function(event) {
+    const rect = canvas.getBoundingClientRect();
+    const mx = event.clientX - rect.left;
+    const my = event.clientY - rect.top;
+
+    shapes.forEach(shape => {
+        let clicked = false;
+        if(shape.type === "rect") clicked = isRectClicked(shape, mx, my);
+        else if(shape.type === "circle") clicked = isCircleClicked(shape, mx, my);
+        else if(shape.type === "line") {
+            // For line, simple bounding box detection
+            clicked = mx >= Math.min(shape.x1, shape.x2) && mx <= Math.max(shape.x1, shape.x2) &&
+                      my >= Math.min(shape.y1, shape.y2) && my <= Math.max(shape.y1, shape.y2);
+        }
+        if(clicked) {
+            // Change color randomly
+            shape.color = "#" + Math.floor(Math.random()*16777215).toString(16);
+        }
+    });
+
+    drawShapes();
+});
+
+// Initial draw
+drawShapes();
+</script>
+</body>
+</html>

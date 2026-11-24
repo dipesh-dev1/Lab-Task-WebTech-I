@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #27ae60;
+            color: white;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #1e8449;
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align:center;">Job Application Form</h2>
+<form action="#" method="post">
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="position">Position Applied For:</label>
+    <select id="position" name="position" required>
+        <option value="">Select Position</option>
+        <option value="developer">Developer</option>
+        <option value="designer">Designer</option>
+        <option value="manager">Manager</option>
+        <option value="hr">HR</option>
+    </select>
+    <label for="experience">Work Experience:</label>
+    <textarea id="experience" name="experience" rows="5" placeholder="Describe your experience" required></textarea>
+
+    <label for="resume">Upload Resume:</label>
+    <input type="file" id="resume" name="resume" required>
+
+    <input type="submit" value="Submit Application">
+</form>
+</body>
+</html>

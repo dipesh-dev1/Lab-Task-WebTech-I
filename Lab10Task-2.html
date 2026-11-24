@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors Demo</title>
+    <style>
+        /* Universal selector */
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Element selector */
+        h2 {
+            color: darkblue;
+        }
+
+        /* Class selector */
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* ID selector */
+        #special {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* Pseudo-class */
+        p:hover {
+            color: orange;
+        }
+
+        /* Attribute selector */
+        input[type="text"] {
+            border: 2px solid blue;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>CSS Selectors Example</h2>
+
+<p>This is a normal paragraph.</p>
+
+<p class="highlight">This paragraph uses a class selector.</p>
+
+<p id="special">This paragraph uses an ID selector.</p>
+
+<p>Hover over this paragraph to see pseudo-class effect.</p>
+
+<label for="name">Name:</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Table with Nested Table Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        h2 {
+            text-align: center;
+        }
+        /* Light faint gray for header rows */
+        th {
+            background-color: #f0f0f0;
+        }
+        /* Light faint gray for Sharmila’s row */
+        .highlight {
+            background-color: #f0f0f0;
+        }
+        /* Light faint gray for the entire HR row */
+        .hr-row td {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Main Table with Nested Table Example</h2>
+    <table>
+        <tr>
+            <th>Department</th>
+            <th>Manager</th>
+            <th>Employees</th>
+        </tr>
+        <tr>
+            <td>Sales</td>
+            <td>John Doe</td>
+            <td>
+                <table>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>Rabi</td>
+                        <td>Sales Executive</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>102</td>
+                        <td>Sharmila</td>
+                        <td>Sales Associate</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="hr-row">
+            <td>HR</td>
+            <td>Sushmita</td>
+            <td>
+                <table>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                    </tr>
+                    <tr>
+                        <td>201</td>
+                        <td>Nabraj</td>
+                        <td>HR Specialist</td>
+                    </tr>
+                    <tr>
+                        <td>202</td>
+                        <td>Ravi</td>
+                        <td>Recruitment Manager</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

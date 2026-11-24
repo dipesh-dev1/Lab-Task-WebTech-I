@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG Icons Example</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            fill: #3498db; /* Default color */
+            transition: fill 0.3s; /* Smooth hover effect */
+        }
+        .icon:hover {
+            fill: #e74c3c; /* Color on hover */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Embedded SVG Icons</h2>
+
+<!-- Example: Home Icon -->
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M32 12 L12 32 H20 V52 H44 V32 H52 Z"/>
+</svg>
+
+<!-- Example: Star Icon -->
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <polygon points="32,4 39,24 60,24 42,38 48,58 32,46 16,58 22,38 4,24 25,24"/>
+</svg>
+
+<!-- Example: Heart Icon -->
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M32 56s-24-16-24-32c0-8 8-16 16-16s8 4 8 4s4-4 8-4s16 8 16 16c0 16-24 32-24 32z"/>
+</svg>
+
+</body>
+</html>

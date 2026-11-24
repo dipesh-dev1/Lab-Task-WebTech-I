@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Control Statements</title>
+</head>
+<body>
+<h2>JavaScript Control Statements</h2>
+<p id="demo"></p>
+<script>
+let output = "";
+
+// if-else
+let age = 18;
+
+if(age >= 18){
+output += "You are an adult.<br>";
+}else{
+output += "You are a minor.<br>";
+}
+
+// switch
+let day = 2;
+
+switch(day){
+case 1:
+output += "Monday<br>";
+break;
+
+case 2:
+output += "Tuesday<br>";
+break;
+
+default:
+output += "Other Day<br>";
+}
+
+// for loop
+output += "For Loop: ";
+for(let i=1;i<=3;i++){
+output += i + " ";
+}
+
+output += "<br>";
+
+// while loop
+let j = 1;
+output += "While Loop: ";
+while(j<=3){
+output += j + " ";
+j++;
+}
+
+output += "<br>";
+
+// do-while loop
+let k = 1;
+output += "Do While Loop: ";
+do{
+output += k + " ";
+k++;
+}while(k<=3);
+
+document.getElementById("demo").innerHTML = output;
+
+</script>
+</body>
+</html>

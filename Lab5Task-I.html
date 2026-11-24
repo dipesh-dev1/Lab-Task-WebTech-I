@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Information Table</title>
+<style>
+table{
+    border-collapse: collapse;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Borders and padding for all table cells */
+table, th, td{
+    border: 1px solid black;
+    padding: 8px;
+}
+
+/* Light color for the header row */
+th {
+    background-color: #f0f0f0;
+}
+
+/* Darker highlight for specific Personal Info cells */
+.personal-highlight {
+    background-color: #c0c0c0;
+}
+</style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Employee Information Table</h2>
+
+<table>
+<tr>
+<th rowspan="2">Employee ID</th>
+<th colspan="2">Personal Info</th>
+<th rowspan="2">Position</th>
+</tr>
+
+<tr>
+<th>Name</th>
+<th>Age</th>
+</tr>
+
+<tr>
+<td>101</td>
+<td class="personal-highlight">Rabi</td>
+<td class="personal-highlight">30</td>
+<td>Manager</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td>Sharmila</td>
+<td>28</td>
+<td>Developer</td>
+</tr>
+
+<tr>
+<td>103</td>
+<td class="personal-highlight">Nabraj</td>
+<td class="personal-highlight">35</td>
+<td>Designer</td>
+</tr>
+
+<tr>
+<td>104</td>
+<td>Sushmita</td>
+<td>40</td>
+<td>HR</td>
+</tr>
+
+</table>
+
+</body>
+</html>

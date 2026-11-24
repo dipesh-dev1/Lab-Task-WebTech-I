@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Priority Demo</title>
+
+    <!-- Internal CSS -->
+    <style>
+        p {
+            color: green;  /* Internal CSS */
+            font-size: 18px;
+        }
+    </style>
+
+    <!-- External CSS (simulated here with <link>, normally would be a separate file) -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+<h2>CSS Priority Example</h2>
+
+<!-- Inline CSS -->
+<p style="color: red;">This text is styled with Inline CSS (highest priority).</p>
+
+<p>This text is styled with Internal CSS (green color).</p>
+
+<p class="external">This text would be styled with External CSS (blue color if linked).</p>
+
+</body>
+</html>

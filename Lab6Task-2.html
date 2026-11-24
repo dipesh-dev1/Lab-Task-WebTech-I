@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Shapes Example</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Drawing Multiple Shapes on Canvas</h2>
+<canvas id="myCanvas" width="400" height="300"></canvas>
+
+<script>
+    // Get the canvas and context
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Draw a rectangle
+    ctx.fillStyle = "lightblue";
+    ctx.fillRect(50, 50, 100, 80);
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(50, 50, 100, 80);
+
+    // Draw a circle
+    ctx.beginPath();
+    ctx.arc(250, 90, 40, 0, 2 * Math.PI);
+    ctx.fillStyle = "lightgreen";
+    ctx.fill();
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+
+    // Draw a line
+    ctx.beginPath();
+    ctx.moveTo(50, 200);
+    ctx.lineTo(350, 250);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // Optional: add text
+    ctx.font = "18px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Rectangle, Circle & Line", 100, 30);
+</script>
+
+</body>
+</html>
